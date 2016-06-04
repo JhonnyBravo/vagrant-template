@@ -18,7 +18,7 @@ setup(
     install_requires=[],
     dependency_links=[],
     entry_points={
-        "console_scripts":[]
+        "console_scripts": []
     },
     long_description=long_description,
     classifiers=[
