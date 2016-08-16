@@ -71,3 +71,24 @@ Vagrant.configure("2") do |config|
     source /etc/default/locale
   SHELL
 end
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "ubuntu/trusty32"
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get update && sudo apt-get upgrade -y
+    sudo apt-get install -y git python-pip python-sphinx vim
+    sudo pip install pip-init
+    sudo pip install autopep8
+    sudo pip install sphinx-intl
+  SHELL
+end
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "ubuntu/trusty32"
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get update && sudo apt-get upgrade -y
+    sudo apt-get install -y git python-pip python-sphinx shellcheck vim
+    sudo pip install pip-init
+    sudo pip install autopep8
+  SHELL
+end
